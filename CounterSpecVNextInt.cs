@@ -1,4 +1,5 @@
-﻿using FsCheck;
+﻿using System;
+using FsCheck;
 using FsCheck.Experimental;
 
 namespace Counter.quickcheck
@@ -35,6 +36,7 @@ namespace Counter.quickcheck
         {
             public override Property Check(CounterSut obj0, int obj1)
             {
+                Console.WriteLine(obj1);
                 obj0.Inc();
                 return (obj0.Get() == obj1).ToProperty();
             }
